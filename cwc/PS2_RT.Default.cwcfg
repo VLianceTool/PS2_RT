@@ -12,7 +12,8 @@
 
 
 <Exe>
-    <Compiler type="C">MinGW/bin/gcc.exe -std=gnu99 </Compiler> <!-- std=c99 -->
+    <Compiler>MinGW/bin/gcc.exe -std=gnu99 </Compiler> <!-- std=c99 -->
+
 	
 	<Linker>MinGW/bin/gcc.exe</Linker>
     <Linker_Static>MinGW/bin/ar.exe</Linker_Static>

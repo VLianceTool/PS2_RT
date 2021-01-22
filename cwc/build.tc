@@ -1,0 +1,10 @@
+Created form prebuild binary [here](https://github.com/ps2dev/ps2toolchain/releases)
+
+Some dll are copied from MinGW\bin to MinGW\libexec\gcc\mingw32\4.6.2 which are required
+
+libgmp-10.dll
+liblto_plugin-0.dll
+libmpc-2.dll
+libmpfr-1.dll
+mingwm10.dll
+pthreadGC2.dll
