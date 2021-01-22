@@ -1,0 +1,55 @@
+﻿<Toolchain> <!-- LibRT Cwc Config (Mingw) -->
+
+<Config>
+	<Platform name="Windows" default="true"></Platform>
+	 <!-- <Platform name="Linux"></Platform>-->
+	
+	<Type name="C">   <Extention>c</Extention>              </Type>
+
+	<BinExt>exe</BinExt>
+	  
+</Config>
+
+
+<Exe>
+    <Compiler type="C">MinGW/bin/gcc.exe -std=gnu99 </Compiler> <!-- std=c99 -->
+	
+	<Linker>MinGW/bin/gcc.exe</Linker>
+    <Linker_Static>MinGW/bin/ar.exe</Linker_Static>
+    <Linker_Dynamic>MinGW/bin/gcc.exe</Linker_Dynamic>
+	
+</Exe>
+
+<Arguments>
+
+	<Compiler>-I"{_pModule}MinGW/include/" </Compiler>
+	
+	<Compiler>-I"{_pModule}MinGW/lib/gcc/mingw32/4.6.2/include/" </Compiler>
+	<Compiler>-I"{_pModule}MinGW/lib/gcc/mingw32/4.6.2/include/c++/" </Compiler>
+	<Compiler>-I"{_pModule}MinGW/lib/gcc/mingw32/4.6.2/include/backward/" </Compiler>
+
+
+	<CompilerLinker>-I"{_pProject}" </CompilerLinker>
+
+	<CompilerLinker>-m32 </CompilerLinker>
+
+	<Compiler>-MD </Compiler>
+	<Linker>-I"{_pProject}" </Linker>
+
+	<Linker>-Wno-unused-value -Wno-deprecated-register -Wno-ignored-attributes -Wno-expansion-to-defined -Wno-ignored-pragmas </Linker>	
+  
+	<Linker>-Werror=return-type </Linker>
+	
+	<Linker>-static-libgcc -static-libstdc++ </Linker>
+	<Linker_Static>rcs </Linker_Static>
+	<Linker_Dynamic>-shared -fPIC</Linker_Dynamic>
+	<Profiler>-pg </Profiler> 
+	<Debug>-ggdb </Debug>  <!-- ggdb3? -->
+	<O2>-O2 -DNDEBUG  -s -ffunction-sections -fdata-sections -Wl,--gc-sections</O2> <!-- TODO -DNDEBUG -->
+	<O3>-O3 -DNDEBUG -s -ffunction-sections -fdata-sections -Wl,--gc-sections</O3>
+	<OS>-Os -DNDEBUG -s -ffunction-sections -fdata-sections -Wl,--gc-sections</OS>
+   
+</Arguments>
+  
+</Toolchain> <!-- End -->
+
