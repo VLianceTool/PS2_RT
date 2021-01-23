@@ -11,37 +11,59 @@
 </Config>
 
 
-<Exe>
-    <Compiler>MinGW/bin/gcc.exe -std=gnu99 </Compiler> <!-- std=c99 -->
 
-	
+<Exe>
+    <Compiler>MinGW/msys/1.0/local/ps2dev/ee/bin/ee-gcc.exe -std=gnu99 </Compiler>  
+	<Linker>MinGW/msys/1.0/local/ps2dev/ee/bin/ee-gcc.exe </Linker>
+
+<!-- 
+    <Compiler>MinGW/bin/gcc.exe -std=gnu99 </Compiler>  
 	<Linker>MinGW/bin/gcc.exe</Linker>
     <Linker_Static>MinGW/bin/ar.exe</Linker_Static>
     <Linker_Dynamic>MinGW/bin/gcc.exe</Linker_Dynamic>
+	-->
 	
 </Exe>
 
 <Arguments>
 
-	<Compiler>-I"{_pModule}MinGW/include/" </Compiler>
-	
+<!-- 
 	<Compiler>-I"{_pModule}MinGW/lib/gcc/mingw32/4.6.2/include/" </Compiler>
 	<Compiler>-I"{_pModule}MinGW/lib/gcc/mingw32/4.6.2/include/c++/" </Compiler>
 	<Compiler>-I"{_pModule}MinGW/lib/gcc/mingw32/4.6.2/include/backward/" </Compiler>
+	-->
 
+<!-- 	<Compiler>-I"{_pModule}MinGW/include/" </Compiler>-->
+
+
+
+	<Compiler>-I"{_pModule}MinGW/msys/1.0/local/ps2dev/ps2sdk/ee/include/" </Compiler>
+	<Compiler>-I"{_pModule}MinGW/msys/1.0/local/ps2dev/ps2sdk/iop/include/" </Compiler>
+	<Compiler>-I"{_pModule}MinGW/msys/1.0/local/ps2dev/ee/ee/sys-include/" </Compiler>
+	<Compiler>-I"{_pModule}MinGW/msys/1.0/local/ps2dev/ps2sdk/common/include/" </Compiler>
+	<Compiler>-I"{_pModule}MinGW/msys/1.0/local/ps2dev/ee/ee/include/" </Compiler>
+
+	<Compiler>-I"{_pModule}MinGW/msys/1.0/local/ps2dev/ee/lib/gcc-lib/ee/3.2.3/include/" </Compiler>
+	<Compiler>-I"{_pModule}MinGW/include/" </Compiler> 
+			
+
+	<Linker>-L"{_pModule}MinGW/msys/1.0/local/ps2dev/ps2sdk/ee/lib/" </Linker>						
+							
+<!-- -T$(PS2SDK)/ee/startup/linkfile -  MinGW\msys\1.0\local\ps2dev\ps2sdk\ee\startup/linkfile -->
 
 	<CompilerLinker>-I"{_pProject}" </CompilerLinker>
 
-	<CompilerLinker>-m32 </CompilerLinker>
 
 	<Compiler>-MD </Compiler>
+	<Compiler>-D_EE </Compiler>
+	
 	<Linker>-I"{_pProject}" </Linker>
 
 	<Linker>-Wno-unused-value -Wno-deprecated-register -Wno-ignored-attributes -Wno-expansion-to-defined -Wno-ignored-pragmas </Linker>	
   
 	<Linker>-Werror=return-type </Linker>
 	
-	<Linker>-static-libgcc -static-libstdc++ </Linker>
+	<Linker>-static-libgcc </Linker>
 	<Linker_Static>rcs </Linker_Static>
 	<Linker_Dynamic>-shared -fPIC</Linker_Dynamic>
 	<Profiler>-pg </Profiler> 

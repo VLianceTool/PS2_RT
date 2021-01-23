@@ -8,3 +8,6 @@ libmpc-2.dll
 libmpfr-1.dll
 mingwm10.dll
 pthreadGC2.dll
+
+
+Remove all 128bit reference: error: unable to emulate 'TI'
