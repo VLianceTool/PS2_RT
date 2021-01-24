@@ -3,8 +3,9 @@
 <Config>
 	<Platform name="PS2" default="true"></Platform>
 	
-	<Type name="C">   <Extention>c</Extention>              </Type>
-
+    <Type name="C">   <Extention>c</Extention>              </Type>
+    <Type name="C++"> <Extention>c++,cc,cpp,cxx</Extention> </Type>
+	
 	<BinExt>exe</BinExt>
 	  
 </Config>
@@ -12,8 +13,9 @@
 
 
 <Exe>
-    <Compiler>MinGW/msys/1.0/local/ps2dev/ee/bin/ee-gcc.exe -std=gnu99 </Compiler>  
-	<Linker>MinGW/msys/1.0/local/ps2dev/ee/bin/ee-gcc.exe </Linker>
+    <Compiler type="C">MinGW/msys/1.0/local/ps2dev/ee/bin/ee-gcc.exe -std=gnu99 </Compiler>  
+    <Compiler>MinGW/msys/1.0/local/ps2dev/ee/bin/ee-g++.exe </Compiler>  
+	<Linker>MinGW/msys/1.0/local/ps2dev/ee/bin/ee-g++.exe </Linker>
 
 <!-- 
     <Compiler>MinGW/bin/gcc.exe -std=gnu99 </Compiler>  
@@ -53,6 +55,8 @@
 	<CompilerLinker>-I"{_pProject}" </CompilerLinker>
 
 
+   <!--  <CompilerLinker>-fno-rtti -fno-exceptions </CompilerLinker>-->
+
 	<Compiler>-MD </Compiler>
 <!-- 	<Compiler>-D_EE </Compiler> -->
 	
@@ -68,7 +72,7 @@
 	<Profiler>-pg </Profiler> 
 	<Debug>-ggdb </Debug>  <!-- ggdb3? -->
 
-	<O2>-O1 -DNDEBUG  -s -ffunction-sections -fdata-sections </O2>
+	<O2>-O1 -DNDEBUG  -s  </O2>
 	<O3>-O1 -DNDEBUG -s -ffunction-sections -fdata-sections  </O3> <!--O2 bug todo -->
 	<OS>-Os -DNDEBUG -s -ffunction-sections -fdata-sections  </OS>
    
