@@ -16,6 +16,8 @@
     <Compiler type="C">MinGW/msys/1.0/local/ps2dev/ee/bin/ee-gcc.exe -std=gnu99 </Compiler>  
     <Compiler>MinGW/msys/1.0/local/ps2dev/ee/bin/ee-g++.exe </Compiler>  
 	<Linker>MinGW/msys/1.0/local/ps2dev/ee/bin/ee-g++.exe </Linker>
+	
+	<bcmc>BCMC/BCMconvert.exe </bcmc>
 
 <!-- 
     <Compiler>MinGW/bin/gcc.exe -std=gnu99 </Compiler>  
