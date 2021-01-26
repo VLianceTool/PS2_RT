@@ -6,7 +6,7 @@
     <Type name="C">   <Extention>c</Extention>              </Type>
     <Type name="C++"> <Extention>c++,cc,cpp,cxx</Extention> </Type>
 	
-	<BinExt>exe</BinExt>
+	<BinExt>elf</BinExt>
 	  
 </Config>
 
